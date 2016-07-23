@@ -1,0 +1,17 @@
+<% layout('../layout/base_layout') -%>
+
+<% block("title", "Look główny") %>
+<% block("pageSelected", "base") %>
+
+<%- partial('partials/slider')%>
+    
+<div class="container_960">
+    <%- partial('partials/welcome')%>
+    <%- partial('partials/popular')%>
+    <%- partial('partials/promo')%>
+</div>
+
+
+<%- partial('partials/stuff')%>
+<%- partial('partials/social')%>
+
