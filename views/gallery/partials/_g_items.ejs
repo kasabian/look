@@ -1,70 +1,28 @@
-<div class="container_960">
+
+<% categories.forEach(function(category, category_val) { %>
+
+	<div class="container_960">
+
 	<div class="col-xs-12 col-sm-12 col-md-12">
 		<div class="b-gallery-tytle">
-			MANICURE / PEDIKURE
+			<%= category.name %>
 		</div>
 	</div>	
 
 	<div class="row">
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/1.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
+		
+		<% category.items.forEach(function(item, val) { %>
 
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/2.jpg">
-		 		<img src="/img/gallery/2.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
+			 <div class="col-xs-12 col-sm-3 col-md-3">
+			 	<a data-lightbox="image-<%= category_val %>" href="<%= item.big_url %>" >
+			 		<img src="<%= item.big_url %>" class="staff_img" />
+			 	</a>	
+			 </div>
 
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/1.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
+		<% }) %>
 
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-			<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/2.jpg">
-
-		 		<img src="/img/gallery/2.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/1.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/2.jpg">
-		 		<img src="/img/gallery/2.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/1.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/2.jpg">
-		 		<img src="/img/gallery/2.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/1.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
-
-		 <div class="col-xs-12 col-sm-3 col-md-3">
-		 	<a data-lightbox="image-1" data-title="My caption" href="/img/gallery/1.jpg">
-		 		<img src="/img/gallery/2.jpg" class="staff_img" />
-		 	</a>	
-		 </div>
 	</div>
 </div>
+
+<% }) %>
+

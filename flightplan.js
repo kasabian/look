@@ -47,16 +47,16 @@ plan.local(function(local) {
 // run commands on remote hosts (destinations)
 plan.remote(function(remote) {
   remote.log('Move folder to root');
-  remote.sudo('cp -R /tmp/' + tmpDir + ' ~', {user: username});
+  remote.sudo('cp -R /tmp/' + tmpDir + ' ~/node_apps/', {user: username});
   remote.rm('-rf /tmp/' + tmpDir);
 
   remote.log('Install dependencies');
-  remote.sudo('npm --production --prefix ~/' + tmpDir + ' install ~/' + tmpDir, {user: username});
+  remote.sudo('npm --production --prefix ~/node_apps/' + tmpDir + ' install ~/node_apps/' + tmpDir, {user: username});
 
   remote.log('Reload application');
-  remote.sudo('ln -snf ~/' + tmpDir + ' ~/'+appName, {user: username});
-  remote.sudo('ln -s ~/shared/logs ~/'+appName, {user: username});
-  remote.sudo('ln -s ~/shared/uploads ~/'+appName + "/public/uploads", {user: username});
-  remote.exec('forever stop ~/'+appName+'/'+startFile, {failsafe: true});
-  remote.exec('PORT=3001 forever start ~/'+appName+'/'+startFile);
+  remote.sudo('ln -snf ~/node_apps/' + tmpDir + ' ~/node_apps/'+ appName, {user: username});
+  remote.sudo('ln -s ~/node_apps/shared/logs ~/node_apps/'+appName, {user: username});
+  remote.sudo('ln -s ~/node_apps/shared/uploads ~/node_apps/'+ appName + "/public/uploads", {user: username});
+  remote.exec('forever stop ~/node_apps/'+appName+'/'+startFile, {failsafe: true});
+  remote.exec('PORT=3001 forever start ~/node_apps/'+appName+'/'+startFile);
 });

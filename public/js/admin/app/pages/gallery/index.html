@@ -1,0 +1,112 @@
+<div class = "row">
+	    
+	    <div class = "col-sm-12 col-md-12 b-add-category">
+
+	      	<div class = "b-input_small">
+	        	<input placeholder="Название категории" 
+					   ng-model = "galleryController.newCategoryName"
+	         	/>
+	      	</div>
+
+	        <button type = "button" 
+	         	    class = "btn btn-warning"
+	         	    ng-click="galleryController.addNewCategory(galleryController.newCategoryName); galleryController.newCategoryName = '';"
+	        > 
+	      		<span class ="glyphicon glyphicon-plus"></span> Добавить категорию фото
+	      	</button>
+
+	      	<br /> <br />
+
+	    </div>
+
+		
+		<div class = "col-sm-12 col-md-12">
+
+		    <div class="panel panel-info" 
+				 ng-repeat = "category in galleryController.categories"
+		    >
+			    
+			    <div class="panel-heading position_relative">
+    				<h3 class="panel-title">{{:: category.name}}</h3>
+    				
+    				<span class="glyphicon glyphicon-remove cursor_pointer remove_cat" 
+    					  ng-click="galleryController.removeCategory(category._id, $index)"  		
+    				></span>
+
+  				</div>
+
+  				<div class="panel-body">
+    				<input type="file" 
+    				       nv-file-select="" 
+    					   uploader="category.uploader" 
+    					   multiple=""
+    				>
+
+					<br />
+
+	<table class="table">
+                        <thead>
+                            <tr>
+                                <th width="50%">Name</th>
+                                <th ng-show="category.uploader.isHTML5">Size</th>
+                                <th ng-show="category.uploader.isHTML5">Progress</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in category.uploader.queue">
+                                <td><strong>{{ item.file.name }}</strong></td>
+                                
+                                <td nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                               
+                                <td>
+                                    <div class="progress" style="margin-bottom: 0;">
+                                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                    </div>
+                                </td>
+
+
+                                <td class="text-center">
+                                    <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                    <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                </td>
+                                <td nowrap>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+					<button type = "button" 
+	         	    		class = "btn btn-info"
+	         	    		ng-click="galleryController.uploadPhotoToCategory($index); category.uploader.uploadAll();"
+	         	    > 
+	      				<span class ="glyphicon glyphicon-floppy-save"></span> Загрузить
+	      			</button>	
+
+    				<br />
+    				<br />
+
+    				<h4 ng-if = "category.items.length > 0"> Загруженные </h4>
+	
+						<span class="photo-wrap" ng-repeat="photo in category.items">
+							<img style="width: 200px; margin: 10px;" ng-src = "{{ photo.big_url }}">
+							<span class ="photo-remove edit_icon glyphicon glyphicon-remove"
+                                  ng-click = "galleryController.removePhotoItem(category._id, $index)"
+                            ></span>
+						</span>
+
+
+					
+
+  				</div>
+
+			</div>
+		</div>
+
+	</div>

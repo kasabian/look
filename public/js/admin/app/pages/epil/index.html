@@ -1,0 +1,130 @@
+<div class = "row">    
+
+      <div class="panel panel-success">
+
+         <div class="panel-heading">
+
+            <h4 class = "admin-titile-h4">Услуги на Epil</h4>
+
+         </div>
+      
+         <div class="panel-body">
+            
+            <div class = "col-sm-12 col-md-12">
+				
+                <div class = "b-input_small">
+                  <input placeholder = "Количество забегов" 
+                         ng-model = "epilController.createEpilData.service_type_name" 
+                  >
+                </div>
+                
+                <div class = "b-input_small">
+                  <input placeholder = "Цена за маленькое" 
+                         type="number" 
+                         ng-model = "epilController.createEpilData.value_1" zl.
+                  >
+                </div>
+
+                <div class = "b-input_small">
+                  <input placeholder = "Цена за среднее" 
+                        type="number" 
+                        ng-model = "epilController.createEpilData.value_2" zl. 
+                  >
+                </div>
+
+                 <div class = "b-input_small">
+
+                 	<input placeholder = "Цена за большое" 
+                         type="number"
+                         ng-model = "epilController.createEpilData.value_3" zl.  
+                  >
+                </div>
+               
+                <button type = "button" 
+                		class = "btn btn-success"
+                    ng-click = "epilController.createEpil()"
+                > 
+               		<span class ="glyphicon glyphicon-plus"></span> Добавить цены
+               	</button>
+               
+               <br /><br /> 
+            </div>
+
+            <table class="table table-hover"> 
+                <thead>
+                  <th>Количество забегов</th>
+                  <th>Цена за маленькое</th>
+                  <th>Цена за среднее</th>
+                  <th>Цена за большое</th>
+                  <th></th>
+                </thead>
+
+               <tr ng-repeat="epil in epilController.epils">
+                  <td>
+                     <span ng-show = "!epil.editItem">
+                        {{ epil.service_type_name }}
+                     </span>
+                     <input ng-show = "epil.editItem" 
+                            type="text" 
+                            ng-model="epil.service_type_name_editing"
+                            placeholder="Количество забегов" 
+                      >
+                  </td>
+                  
+                  <td>
+                     <span ng-show = "!epil.editItem"> {{ epil.value_1 }} zl</span>
+                     
+                     <input ng-show = "epil.editItem" 
+                            type="text" 
+                            ng-model="epil.value_1_editing"
+                            placeholder="Цена за маленькое" 
+                      >
+
+                  </td>
+
+                  <td>
+                     <span ng-show = "!epil.editItem" > {{ epil.value_2 }} zl</span> 
+                     
+                     <input ng-show = "epil.editItem" 
+                            type="number" 
+                            ng-model="epil.value_2_editing"
+                            placeholder="Цена за среднее" 
+                     >
+                  </td>
+					
+				  <td>
+                     <span ng-show = "!epil.editItem" > {{ epil.value_3 }} zl</span> 
+                     <input ng-show = "epil.editItem" 
+                            type="number" 
+                            ng-model="epil.value_3_editing"
+                            placeholder="Цена за большое" 
+                     >
+                  </td>		
+
+                  <td>
+                    <div ng-show = "!epil.editItem">
+                       <span class ="glyphicon glyphicon-remove cursor_pointer edit_icon" 
+  						               ng-click="epilController.removeEpil($index);"	
+                       ></span>
+
+                        <span class ="glyphicon glyphicon-pencil cursor_pointer edit_icon" 
+  						                ng-click="epilController.startEditItem(epil);"	
+                       ></span>
+                     </div>
+
+                     <div ng-show = "epil.editItem">
+                       <span class ="glyphicon glyphicon-floppy-save cursor_pointer edit_icon" 
+                             ng-click="epilController.endEditingItem(epil);" 
+                       ></span>
+                     </div>
+
+
+                  </td>
+               </tr>
+            </table>
+
+         </div>
+
+      </div>
+
+</div>      

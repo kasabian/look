@@ -21,32 +21,16 @@
 						<td>DUŻE PARTIE</td>
 					</tr>
 
-					<tr>
-						<td>1 zabieg</td>
-						<td class="price_big_td">49 zł</td>
-						<td class="price_big_td">79 zł</td>
-						<td class="price_big_td">99 zł</td>
-					</tr>
+					<% epil_items.forEach( function(epil) {%>
 
-					<tr>
-						<td>3 zabiegi</td>
-						<td class="price_big_td">139 zł</td>
-						<td class="price_big_td">229 zł</td>
-						<td class="price_big_td">279 zł</td>
-					</tr>
+						<tr>
+							<td><%= epil.service_type_name %></td>
+							<td class="price_big_td"><%= epil.value_1 %> zł</td>
+							<td class="price_big_td"><%= epil.value_2 %> zł</td>
+							<td class="price_big_td"><%= epil.value_3 %> zł</td>
+						</tr>
 
-					<tr>
-						<td>6 zabiegów</td>
-						<td class="price_big_td">269 zł</td>
-						<td class="price_big_td">
-							<span class="price_action">
-								<div class="price_action_minus_procent">-40%</div>	
-									246 zł
-							</span>	
-						</td>
-						<td class="price_big_td">559 zł</td>
-					</tr>
-
+					<%})%>
 				</table>
 			</div>	
 

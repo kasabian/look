@@ -1,0 +1,223 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.table-btn-correct{
+  margin-top: 25px;
+}
+
+.admin_photo_preview {
+  width: 200px;
+}
+
+.admin_avatar_preview{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%; 
+}
+
+.admin-wrap-recipe-text{
+  max-width: 400px;
+}
+
+.b-input_small{
+  width: 220px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.b-remove-cat-service{
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+}
+
+.uload_img_block{
+  height: 156px;
+  width: 156px;
+  overflow: hidden;
+  border: 1px solid gray;
+  border-radius: 3px;
+  position: relative;
+}
+
+.uload_img_block img{
+    position: absolute;
+    top: 0;
+    width: 150px;
+    left: 0;
+    z-index: -1;
+}
+
+.uload_img_block input[type=file]{
+    height: 150px;
+    width: 150px;
+    opacity:0;
+    z-index: 500;
+}
+
+.uload_photo-text{
+    position: absolute;
+    width: 155px;
+    text-align: center;
+    margin-top: -110px;
+    margin-left: -5px;
+    z-index: -1;
+}
+
+.b-add-category{
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+
+.h-service-img{
+  width: 50px;
+}
+
+.cursor_pointer{
+  cursor: pointer;
+}
+
+.edit_icon{
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+.admin-titile-h4{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.photo-remove{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 5px;
+    color: white;
+    background: orange;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+.photo-remove:hover{
+  opacity: 1;
+}
+
+.photo-wrap{
+    position: relative;
+    display: inline-block;
+}
+
+.remove_cat{
+    position: absolute;
+    right: 20px;
+    top: 13px;
+}
+
+.position_relative{
+  position: relative;
+}

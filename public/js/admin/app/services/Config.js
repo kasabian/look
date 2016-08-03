@@ -1,0 +1,1 @@
+adminApp.constant('Config', {});
