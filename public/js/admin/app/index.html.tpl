@@ -58,5 +58,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 
 
-  <script src="/javascripts/admin/build/admin.min.js"></script>
+  <script src="/js/admin/build/admin.min.js"></script>
 </html>
