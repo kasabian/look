@@ -2,7 +2,7 @@ angular.module('templates-main', ['../app/directives/basemenu/base_menu.html', '
 
 angular.module("../app/directives/basemenu/base_menu.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../app/directives/basemenu/base_menu.html",
-    "<div class=\"col-sm-3 col-md-2 sidebar\"><ul class=\"nav nav-sidebar\"><li class=prices_link><a href=/admin/users>Цены (основные услугы)</a> <span class=sr-only>(current)</span></li><li class=epil_link><a href=/admin/epil_link>Цены (EPIL-RF)</a> <span class=sr-only>(current)</span></li><li class=gallery_link><a href=/admin/gallery>Галерея <span class=sr-only>(current)</span></a></li><li class=slider_link><a href=/admin/gallery>Главная страница <span class=sr-only>(current)</span></a></li></ul></div>");
+    "<div class=\"col-sm-3 col-md-2 sidebar\"><ul class=\"nav nav-sidebar\"><li class=prices_link><a href=/admin/users>Цены (основные услугы)</a> <span class=sr-only>(current)</span></li><li class=epil_link><a href=/admin/epil_link>Цены (EPIL-RF)</a> <span class=sr-only>(current)</span></li><li class=gallery_link><a href=/admin/gallery>Галерея <span class=sr-only>(current)</span></a></li></ul></div>");
 }]);
 
 angular.module("../app/pages/epil/index.html", []).run(["$templateCache", function($templateCache) {
