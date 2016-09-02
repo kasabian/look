@@ -534,3 +534,11 @@ body{
 .margin-b--10{
 	margin-bottom: -20px;
 }
+
+.bx-wrapper img{
+	width: 100%;
+}
+
+.epil_description{
+	font-size: 18px;
+}

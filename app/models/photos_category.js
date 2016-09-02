@@ -25,7 +25,7 @@ schema.statics.getFull = function(mainCallBack) {
 	var self = this;
 
 	this.find({})
-		.sort({ 'created' : -1})
+		.sort({ 'created' : 1})
 		.exec(function(err, categories) {
 			if(err) throw err;
 
