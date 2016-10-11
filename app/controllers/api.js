@@ -62,6 +62,19 @@ api.remove_service = function (req, res, next) {
 
 }
 
+api.update_service = function (req, res, next) {
+
+	Services.findByIdAndUpdate(req.body._id, { $set: req.body}, function (err, item) {
+ 		
+ 		if (err) throw err;
+  		
+  		res.send({
+			status: true
+		}); 
+	});
+
+}
+
 api.create_service_item = function (req, res, next) {
 
 	var sItem =  new ServiceItem(req.body);

@@ -56,7 +56,9 @@
       <div class="panel panel-success" ng-repeat = "service in PricesController.services">
          <div class="panel-heading">
            	<img ng-src="{{:: service.src }}" class = "h-service-img">
-              &nbsp<h4 class = "admin-titile-h4">{{:: service.name }}</h4>
+              &nbsp<h4 class = "admin-titile-h4">
+                {{:: service.name }} <br />
+              </h4>
             <div class = "b-remove-cat-service"> 
 
 	            <span class ="glyphicon glyphicon-remove cursor_pointer"
@@ -67,7 +69,15 @@
          </div>
         
            <div class="panel-footer" ng-if="service.description">
-              <div >{{:: service.description }}</div>
+              <div >
+                 <textarea ng-model="service.description"></textarea> <br> 
+
+                  <button class="btn btn-success" 
+                         ng-click="PricesController.updateDescription(service);"
+                  >
+                    <span class="glyphicon glyphicon-floppy-save"></span>  Обновть описание
+                  </button>
+              </div>
             </div>  
 
          <div class="panel-body">
@@ -89,7 +99,6 @@
                 <div class = "b-input_small">
                   <input placeholder="цена"
 						             ng-model =	"service.serviceItemPrice"
-						             type="number" 
                   > zl.
                 </div>
                
@@ -136,8 +145,7 @@
 
                   <td>
                      <span ng-show = "!serviceItem.editItem" > {{ serviceItem.price }} zl</span> 
-                     <input ng-show = "serviceItem.editItem" 
-                            type="number" 
+                     <input ng-show = "serviceItem.editItem"
                             ng-model="serviceItem.priceEditing"
                             placeholder="Цена услуги" 
                      >

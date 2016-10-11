@@ -91,6 +91,13 @@ adminApp.controller("pricesController", ["$scope", "FileUploader", "Services", "
                Api.updateItem(serviceItem);
           }
 
+          this.updateDescription = function (model) {
+
+               Api.updateService(model).then(function() {
+                    alert("ок!");
+               });
+          }
+
           this.uploader = new FileUploader();
 
           this.uploader.url = "/upload/img";

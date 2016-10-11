@@ -149,6 +149,11 @@ body{
 .b-head-logo_title{
 	font-size: 18px;
     font-weight: bold;
+    color: #202020;
+}
+
+.b-head-logo_title:hover{
+	color: #202020;
 }
 
 .b-head-logo_fix_width{
@@ -546,4 +551,8 @@ body{
 
 .epil_description{
 	font-size: 18px;
+}
+
+.link_underline:hover{
+	text-decoration: none;
 }

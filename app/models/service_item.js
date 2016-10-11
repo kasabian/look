@@ -9,7 +9,7 @@ var schema = new Schema({
 	},
 
 	price: {
-		type: Number,
+		type: String,
 		required: true
 	},
 

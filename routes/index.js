@@ -37,6 +37,8 @@ router.post('/upload/img', upload.single('avatar'), function(req, res) {
 router.get('/api/get_services', api.get_services);
 
 router.post('/api/create_service', api.create_service);
+router.post('/api/update_service', api.update_service);
+
 router.post('/api/remove_service', api.remove_service);
 
 router.post('/api/create_service_item', api.create_service_item);

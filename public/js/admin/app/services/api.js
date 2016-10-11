@@ -15,6 +15,9 @@ adminApp.factory('Api',[ "Http", function(Http) {
         return Http.post("/api/remove_service", obj)
     }
 
+    Api.updateService = function(obj) {
+        return Http.post("/api/update_service", obj)
+    }
 
     Api.createServiceItem = function(obj) {
         return Http.post("/api/create_service_item", obj)
